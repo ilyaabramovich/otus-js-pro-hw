@@ -20,7 +20,7 @@ module.exports = function getPath(elem) {
     }
 
     let childElementCount = currentElem.parentNode.childElementCount
-    if (childElementCount > 1) {
+    if (childElementCount > 1 && currentElem.tagName !== 'BODY') {
       let elemPosition = Array.prototype.indexOf.call(currentElem.parentNode.children, currentElem) + 1
       if (elemPosition === 1) {
         currentSelector += ':first-child'
